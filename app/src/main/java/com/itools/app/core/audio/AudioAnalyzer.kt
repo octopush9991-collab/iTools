@@ -1,6 +1,7 @@
 package com.itools.app.core.audio
 
 import android.content.Context
+import android.media.AudioFormat
 import android.media.MediaCodec
 import android.media.MediaExtractor
 import android.media.MediaFormat
@@ -69,7 +70,7 @@ object AudioAnalyzer {
         val counts = IntArray(TARGET_RATE * maxSeconds)
         var sampleRate = format.getInteger(MediaFormat.KEY_SAMPLE_RATE)
         var channels = format.getInteger(MediaFormat.KEY_CHANNEL_COUNT).coerceAtLeast(1)
-        var encoding = MediaFormat.ENCODING_PCM_16BIT
+        var encoding = AudioFormat.ENCODING_PCM_16BIT
         var frameIndex = 0L
         val maxFrames = maxSeconds.toLong() * TARGET_RATE
 
@@ -104,7 +105,7 @@ object AudioAnalyzer {
                     encoding = if (outFormat.containsKey(MediaFormat.KEY_PCM_ENCODING)) {
                         outFormat.getInteger(MediaFormat.KEY_PCM_ENCODING)
                     } else {
-                        MediaFormat.ENCODING_PCM_16BIT
+                        AudioFormat.ENCODING_PCM_16BIT
                     }
                 }
 
@@ -115,7 +116,7 @@ object AudioAnalyzer {
                     if (buffer != null && info.size > 0) {
                         buffer.position(info.offset)
                         buffer.limit(info.offset + info.size)
-                        if (encoding == MediaFormat.ENCODING_PCM_FLOAT) {
+                        if (encoding == AudioFormat.ENCODING_PCM_FLOAT) {
                             val floats = buffer.order(ByteOrder.nativeOrder()).asFloatBuffer()
                             while (floats.hasRemaining()) {
                                 var mono = 0f
@@ -157,7 +158,7 @@ object AudioAnalyzer {
         val samples = FloatArray(lastBin + 1) { index ->
             if (counts[index] > 0) bins[index] / counts[index] else 0f
         }
-        AudioEnvelope(
+        return AudioEnvelope(
             sampleRate = TARGET_RATE,
             samples = samples,
             durationMs = (samples.size * 1000L) / TARGET_RATE

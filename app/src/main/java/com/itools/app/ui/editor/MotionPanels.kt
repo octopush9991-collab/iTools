@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AcUnit
 import androidx.compose.material.icons.filled.FastForward
-import androidx.compose.material.icons.filled.Freeze
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -131,7 +131,7 @@ fun SpeedPanel(selected: Clip?, viewModel: EditorViewModel) {
         Spacer(Modifier.height(8.dp))
         PanelOutlinedButton(
             label = "Bekukan bingkai di playhead",
-            icon = Icons.Default.Freeze,
+            icon = Icons.Default.AcUnit,
             enabled = active.kind == ClipKind.VIDEO || active.kind == ClipKind.IMAGE
         ) { viewModel.freezeFrame() }
     }

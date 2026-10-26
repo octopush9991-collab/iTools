@@ -191,7 +191,7 @@ class FrameTools(
                             )
                             .build()
                     )
-                    .setListener(object : Transformer.Listener {
+                    .addListener(object : Transformer.Listener {
                         override fun onCompleted(
                             composition: Composition,
                             exportResult: ExportResult

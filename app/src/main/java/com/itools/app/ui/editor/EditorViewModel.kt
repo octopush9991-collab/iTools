@@ -200,7 +200,11 @@ class EditorViewModel(
         scheduleSave(next)
     }
 
-    private fun edit(block: (Project) -> Project, history: Boolean = true, preview: Boolean = true) {
+    private fun edit(
+        history: Boolean = true,
+        preview: Boolean = true,
+        block: (Project) -> Project
+    ) {
         val current = _state.value.project ?: return
         apply(block(current), history = history, preview = preview)
     }
@@ -266,7 +270,7 @@ class EditorViewModel(
         }
     }
 
-    private fun editLive(block: (Project) -> Project, preview: Boolean = true) {
+    private fun editLive(preview: Boolean = true, block: (Project) -> Project) {
         val current = _state.value.project ?: return
         val next = block(current)
         if (next == current) return
@@ -938,15 +942,15 @@ class EditorViewModel(
     // ---------------------------------------------------------------- project settings
 
     fun renameProject(name: String) {
-        edit({ ProjectOps.rename(it, name) }, preview = false)
+        edit(preview = false) { ProjectOps.rename(it, name) }
     }
 
     fun setCanvas(canvas: CanvasSpec) {
-        edit({ ProjectOps.setCanvas(it, canvas) }, preview = true)
+        edit(preview = true) { ProjectOps.setCanvas(it, canvas) }
     }
 
     fun setExport(settings: ExportSettings) {
-        edit({ ProjectOps.setExport(it, settings) }, preview = false)
+        edit(preview = false) { ProjectOps.setExport(it, settings) }
     }
 
     fun setFitMode(fit: FitMode) {

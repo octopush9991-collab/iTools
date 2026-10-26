@@ -79,7 +79,7 @@ internal abstract class SimpleShaderProgram(
      */
     protected val glProgram: GlProgram by lazy {
         GlEffectUtils.createProgram(fragmentShader).also {
-            it.bindBaseAttributes()
+            with(GlEffectUtils) { it.bindBaseAttributes() }
             onProgramCreated(it)
         }
     }
@@ -103,7 +103,7 @@ internal abstract class SimpleShaderProgram(
 
 /** Wraps a shader factory in a Media3 [GlEffect]. */
 @OptIn(UnstableApi::class)
-internal abstract class ShaderGlEffect : GlEffect {
+abstract class ShaderGlEffect : GlEffect {
     abstract fun createProgram(context: Context, useHdr: Boolean): BaseGlShaderProgram
 
     final override fun toGlShaderProgram(

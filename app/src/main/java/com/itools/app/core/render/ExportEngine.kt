@@ -108,7 +108,7 @@ class ExportEngine(
                     .setVideoMimeType(project.export.codec.mime)
                     .setAudioMimeType(MediaFormat.MIMETYPE_AUDIO_AAC)
                     .setEncoderFactory(encoderFactory)
-                    .setListener(exportListener)
+                    .addListener(exportListener)
                     .build()
                 this@ExportEngine.transformer = transformer
 

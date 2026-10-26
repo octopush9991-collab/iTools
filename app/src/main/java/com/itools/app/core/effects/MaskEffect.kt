@@ -25,7 +25,7 @@ class MaskEffect(private val spec: MaskSpec) : ShaderGlEffect() {
 @OptIn(UnstableApi::class)
 private class MaskProgram(
     useHdr: Boolean,
-    spec: MaskSpec
+    private val spec: MaskSpec
 ) : SimpleShaderProgram(useHdr, FRAGMENT_SHADER) {
 
     private val shape = when (spec.shape) {
