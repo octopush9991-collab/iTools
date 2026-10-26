@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iTools</string>
+    <string name="app_tagline">Edit video. Sepenuhnya offline.</string>
+
+    <string name="nav_home">Proyek</string>
+    <string name="nav_settings">Pengaturan</string>
+    <string name="action_new_project">Proyek baru</string>
+    <string name="action_import">Impor media</string>
+    <string name="action_export">Ekspor</string>
+    <string name="action_undo">Urungkan</string>
+    <string name="action_redo">Ulangi</string>
+    <string name="action_play">Putar</string>
+    <string name="action_pause">Jeda</string>
+    <string name="action_save">Simpan</string>
+    <string name="action_delete">Hapus</string>
+    <string name="action_rename">Ganti nama</string>
+    <string name="action_duplicate">Duplikat</string>
+    <string name="action_close">Tutup</string>
+    <string name="action_done">Selesai</string>
+    <string name="action_add">Tambah</string>
+    <string name="action_apply">Terapkan</string>
+    <string name="action_reset">Reset</string>
+
+    <string name="home_recent">Draf terbaru</string>
+    <string name="home_empty_title">Belum ada proyek</string>
+    <string name="home_empty_body">Mulai dari video, foto, atau template lokal. Semua diproses di perangkat.</string>
+    <string name="home_templates">Template lokal</string>
+    <string name="home_new_hint">Buat proyek kosong</string>
+    <string name="home_local_badge">100% lokal</string>
+    <string name="home_no_ads_badge">Tanpa iklan</string>
+    <string name="home_no_paywall_badge">Semua fitur gratis</string>
+
+    <string name="tool_media">Media</string>
+    <string name="tool_audio">Audio</string>
+    <string name="tool_text">Teks</string>
+    <string name="tool_sticker">Stiker</string>
+    <string name="tool_filter">Filter</string>
+    <string name="tool_adjust">Atur</string>
+    <string name="tool_effect">Efek</string>
+    <string name="tool_transition">Transisi</string>
+    <string name="tool_mask">Masker</string>
+    <string name="tool_chroma">Chroma</string>
+    <string name="tool_speed">Kecepatan</string>
+    <string name="tool_canvas">Kanvas</string>
+    <string name="tool_keyframe">Keyframe</string>
+    <string name="tool_caption">Subtitle</string>
+    <string name="tool_ai">AI lokal</string>
+
+    <string name="export_title">Ekspor video</string>
+    <string name="export_resolution">Resolusi</string>
+    <string name="export_fps">Frame rate</string>
+    <string name="export_codec">Codec</string>
+    <string name="export_bitrate">Bitrate</string>
+    <string name="export_start">Mulai ekspor</string>
+    <string name="export_running">Mengekspor…</string>
+    <string name="export_done">Ekspor selesai</string>
+    <string name="export_saved">Disimpan ke Galeri</string>
+    <string name="export_free_note">Tanpa watermark, tanpa batas, tanpa pembelian.</string>
+
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_appearance">Tampilan</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_system">Ikuti sistem</string>
+    <string name="settings_theme_dark">Gelap</string>
+    <string name="settings_theme_light">Terang</string>
+    <string name="settings_storage">Penyimpanan</string>
+    <string name="settings_storage_used">Ruang proyek terpakai</string>
+    <string name="settings_clear_cache">Bersihkan cache pratinjau</string>
+    <string name="settings_about">Tentang</string>
+    <string name="settings_version">Versi</string>
+    <string name="settings_offline">Aplikasi ini tidak memiliki permission INTERNET.</string>
+    <string name="settings_privacy">Tidak ada akun, iklan, analytics, atau pembelian.</string>
+    <string name="settings_open_source">Dibangun dengan Jetpack Compose dan Media3.</string>
+
+    <string name="permission_media_title">Akses media</string>
+    <string name="permission_media_body">iTools perlu membaca video, foto, dan audio pilihan Anda. Tidak ada file yang diunggah.</string>
+    <string name="permission_mic_title">Izin mikrofon</string>
+    <string name="permission_mic_body">Diperlukan hanya saat Anda merekam voice-over.</string>
+</resources>
